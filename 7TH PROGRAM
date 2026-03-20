@@ -1,0 +1,23 @@
+balance = 10000
+
+while True:
+    print("\n1. Withdraw\n2. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        amount = float(input("Enter amount: "))
+
+        if amount < 0:
+            print("Invalid amount")
+        elif amount > balance:
+            print("Insufficient balance")
+        else:
+            balance -= amount
+            print("Withdrawal successful")
+            print("Remaining balance:", balance)
+
+    elif choice == 2:
+        print("Thank you!")
+        break
+    else:
+        print("Invalid choice")
