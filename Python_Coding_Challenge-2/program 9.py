@@ -1,0 +1,10 @@
+# Input number
+n = int(input())
+
+# Check number type
+if n > 0:
+    print("Positive")
+elif n < 0:
+    print("Negative")
+else:
+    print("Zero")
