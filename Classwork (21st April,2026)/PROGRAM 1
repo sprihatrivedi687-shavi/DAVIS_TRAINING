@@ -1,0 +1,35 @@
+try:
+    with open("students.txt", "r") as f:
+        topper = ("", 0)
+        
+        for line in f:
+            try:
+                id, name, m1, m2, m3 = line.strip().split(",")
+                m1, m2, m3 = int(m1), int(m2), int(m3)
+
+                total = m1 + m2 + m3
+                percent = total / 3
+
+                # Grade assignment
+                if percent >= 90:
+                    grade = "A"
+                elif percent >= 75:
+                    grade = "B"
+                elif percent >= 50:
+                    grade = "C"
+                else:
+                    grade = "F"
+
+                print(name, total, percent, grade)
+
+                # topper
+                if total > topper[1]:
+                    topper = (name, total)
+
+            except:
+                print("Invalid data skipped")
+
+        print("Topper:", topper)
+
+except FileNotFoundError:
+    print("File not found")
